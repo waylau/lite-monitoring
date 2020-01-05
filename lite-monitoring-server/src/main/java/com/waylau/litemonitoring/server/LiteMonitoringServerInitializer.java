@@ -1,4 +1,4 @@
-package com.waylau.litemonitoring.client;
+package com.waylau.litemonitoring.server;
 
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelInitializer;
@@ -8,13 +8,12 @@ import io.netty.handler.codec.serialization.ObjectDecoder;
 import io.netty.handler.codec.serialization.ObjectEncoder;
 
 /**
- * SerializationClient Initializer.
+ * SerializationServer ChannelInitializer.
  * 
  * @since 1.0.0 2020年1月2日
  * @author <a href="https://waylau.com">Way Lau</a>
  */
-public class SerializationClientInitializer extends
-		ChannelInitializer<Channel> {
+public class LiteMonitoringServerInitializer extends ChannelInitializer<Channel> {
 
 	private final static int MAX_OBJECT_SIZE = 1024 * 1024;
 
@@ -25,6 +24,6 @@ public class SerializationClientInitializer extends
 				ClassResolvers.weakCachingConcurrentResolver(this.getClass()
 						.getClassLoader())));
 		pipeline.addLast(new ObjectEncoder());
-		pipeline.addLast(new SerializationClientHandler());
+		pipeline.addLast(new LiteMonitoringServerHandler());
 	}
 }

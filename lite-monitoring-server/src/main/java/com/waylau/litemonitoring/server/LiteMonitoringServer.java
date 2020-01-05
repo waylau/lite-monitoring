@@ -11,12 +11,12 @@ import io.netty.handler.logging.LoggingHandler;
 
 
 /**
- * Serialization Server.
+ * Lite Monitoring Server.
  * 
- * @since 1.0.0 2020年1月2日
+ * @since 1.0.0 2020年1月5日
  * @author <a href="https://waylau.com">Way Lau</a>
  */
-public final class SerializationServer {
+public final class LiteMonitoringServer {
 
     static final int PORT = 8082;
 
@@ -32,7 +32,7 @@ public final class SerializationServer {
              .option(ChannelOption.SO_BACKLOG, 100)
              .childOption(ChannelOption.SO_KEEPALIVE, true)
              .handler(new LoggingHandler(LogLevel.INFO))
-             .childHandler(new SerializationServerInitializer());
+             .childHandler(new LiteMonitoringServerInitializer());
 
             // Start the server.
             ChannelFuture f = b.bind(PORT).sync();

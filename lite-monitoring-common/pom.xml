@@ -56,6 +56,8 @@
 
 	<properties>
 		<netty-all.version>4.1.44.Final</netty-all.version>
+		<oshi-core.version>4.3.0</oshi-core.version>
+		<logback-classic.version>1.2.3</logback-classic.version>
 		<junit.jupiter.version>5.5.2</junit.jupiter.version>
 	</properties>
 
@@ -66,7 +68,20 @@
 			<artifactId>netty-all</artifactId>
 			<version>${netty-all.version}</version>
 		</dependency>
-
+		<dependency>
+			<groupId>com.github.oshi</groupId>
+			<artifactId>oshi-core</artifactId>
+			<version>${oshi-core.version}</version>
+		</dependency>
+		
+		<!-- 日志相关 -->
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>${logback-classic.version}</version>
+		</dependency>
+		
+		<!-- 测试相关的依赖 -->
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter</artifactId>

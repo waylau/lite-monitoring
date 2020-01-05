@@ -55,7 +55,6 @@
 	</distributionManagement>
 
 	<properties>
-		<oshi-core.version>4.3.0</oshi-core.version>
 		<junit.jupiter.version>5.5.2</junit.jupiter.version>
 	</properties>
 
@@ -65,11 +64,6 @@
 			<groupId>com.waylau</groupId>
 			<artifactId>lite-monitoring-common</artifactId>
 			<version>1.0.0</version>
-		</dependency>
-		<dependency>
-			<groupId>com.github.oshi</groupId>
-			<artifactId>oshi-core</artifactId>
-			<version>${oshi-core.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
