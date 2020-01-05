@@ -1,0 +1,71 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.waylau</groupId>
+	<artifactId>lite-monitoring</artifactId>
+	<version>1.0.0</version>
+	<packaging>pom</packaging>
+
+	<name>${project.groupId}:${project.artifactId}</name>
+	<description>Lite Monitoring is a fast and cross-platform open source monitoring solution for operating systems monitoring.
+	</description>
+	<url>https://github.com/waylau/lite-monitoring</url>
+	<organization>
+		<name>Way Lau</name>
+		<url>https://waylau.com</url>
+	</organization>
+
+	<licenses>
+		<license>
+			<name>MIT License</name>
+			<url>http://www.opensource.org/licenses/mit-license.php</url>
+		</license>
+	</licenses>
+
+	<scm>
+		<connection>scm:git:git://github.com/waylau/lite-monitoring.git</connection>
+		<developerConnection>scm:git:ssh://github.com:waylau/lite-monitoring.git</developerConnection>
+		<url>http://github.com/waylau/lite-monitoring/tree/master</url>
+	</scm>
+
+	<developers>
+		<developer>
+			<id>waylau</id>
+			<name>Way Lau</name>
+			<email>waylau521@gmall.com</email>
+		</developer>
+	</developers>
+
+	<distributionManagement>
+		<snapshotRepository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+		<repository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+		</repository>
+	</distributionManagement>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
+		<maven-shade-plugin.version>3.2.1</maven-shade-plugin.version>
+		<maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
+		<nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
+		<maven-source-plugin.version>3.0.1</maven-source-plugin.version>
+		<maven-javadoc-plugin.version>3.0.1</maven-javadoc-plugin.version>
+		<java.version>1.8</java.version>
+	</properties>
+	
+	<modules>
+	   <module>lite-monitoring-common</module>
+	   <module>lite-monitoring-client</module>
+	   <module>lite-monitoring-server</module>
+	   <module>lite-monitoring-web</module>
+	</modules>
+
+	
+</project>
