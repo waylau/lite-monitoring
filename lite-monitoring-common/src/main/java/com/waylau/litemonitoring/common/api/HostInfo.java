@@ -13,64 +13,78 @@ import java.io.Serializable;
  */
 public class HostInfo implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+	private static final Long serialVersionUID = 1L;
+	
+	/**
+	 * 主机位置（IP+端口），也是主机的唯一表示
+	 */
+	private String host;
 
 	/**
 	 * 创建时间
 	 */
-	private long createTime;
+	private Long createTime;
 
 	/**
 	 * 已用内存（单位：byte）
 	 */
-	private long usedMemory;
+	private Long usedMemory;
 
 	/**
 	 * 总内存（单位：byte）
 	 */
-	private long totalMemory;
+	private Long totalMemory;
 
 	/**
 	 * CPU使用率
 	 */
-	private double usedCpu;
+	private Double usedCpu;
 
-	public long getUsedMemory() {
+	public Long getUsedMemory() {
 		return usedMemory;
 	}
 
-	public void setUsedMemory(long usedMemory) {
+	public void setUsedMemory(Long usedMemory) {
 		this.usedMemory = usedMemory;
 	}
 
-	public long getTotalMemory() {
+	public Long getTotalMemory() {
 		return totalMemory;
 	}
 
-	public void setTotalMemory(long totalMemory) {
+	public void setTotalMemory(Long totalMemory) {
 		this.totalMemory = totalMemory;
 	}
 
-	public double getUsedCpu() {
+	public Double getUsedCpu() {
 		return usedCpu;
 	}
 
-	public void setUsedCpu(double usedCpu) {
+	public void setUsedCpu(Double usedCpu) {
 		this.usedCpu = usedCpu;
 	}
 
-	public long getCreateTime() {
+	public Long getCreateTime() {
 		return createTime;
 	}
 
-	public void setCreateTime(long createTime) {
+	public void setCreateTime(Long createTime) {
 		this.createTime = createTime;
+	}
+
+	public String getHost() {
+		return host;
+	}
+
+	public void setHost(String host) {
+		this.host = host;
 	}
 
 	@Override
 	public String toString() {
-		return "HostInfo [createTime=" + createTime + ", usedMemory=" + usedMemory + ", totalMemory=" + totalMemory
-				+ ", usedCpu=" + usedCpu + "]";
+		return "HostInfo [host=" + host + ", createTime=" + createTime 
+				+ ", usedMemory=" + usedMemory + ", totalMemory="
+				+ totalMemory + ", usedCpu=" + usedCpu + "]";
 	}
 
 }
