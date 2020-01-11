@@ -1,6 +1,7 @@
 package com.waylau.litemonitoring.web;
 
 import com.waylau.lite.jetty.LiteJettyServer;
+import com.waylau.litemonitoring.web.config.AppConfiguration;
 
 /**
  * Lite Monitoring Web Main Application.
@@ -10,6 +11,6 @@ import com.waylau.lite.jetty.LiteJettyServer;
  */
 public class LiteMonitoringWebStarter {
 	public static void main(String[] args) {
-		new LiteJettyServer().run(args);
+		new LiteJettyServer(AppConfiguration.class).run(args);
 	}
 }

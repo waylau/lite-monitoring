@@ -66,6 +66,11 @@
 			<artifactId>lite</artifactId>
 			<version>${lite.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>com.waylau</groupId>
+			<artifactId>lite-monitoring-common</artifactId>
+			<version>1.0.0</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
@@ -81,7 +86,7 @@
 			<!-- 设置编译插件 -->
 			<plugin>
 				<groupId>
-                        org.apache.maven.plugins
+                    org.apache.maven.plugins
                 </groupId>
 				<artifactId>
                     maven-compiler-plugin

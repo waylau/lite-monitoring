@@ -32,7 +32,7 @@ public class DbUtilsTest {
 		    LoggerFactory.getLogger(DbUtilsTest.class);
 	
 	private static final String SQL_QUERY =
-			"Select host, create_time AS createTime, used_memory AS usedMemory, "
+			"SELECT host, create_time AS createTime, used_memory AS usedMemory, "
 					+ "total_memory AS totalMemory, used_cpu AS usedCpu "
 					+ "FROM t_host_info ORDER BY create_time desc LIMIT 10";
 
