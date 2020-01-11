@@ -22,7 +22,7 @@ public final class LiteMonitoringServer {
 
     public static void main(String[] args) throws Exception {
 
-        // Configure the server.
+        // 配置服务器
         EventLoopGroup bossGroup = new NioEventLoopGroup(1);
         EventLoopGroup workerGroup = new NioEventLoopGroup();
         try {
@@ -34,13 +34,13 @@ public final class LiteMonitoringServer {
              .handler(new LoggingHandler(LogLevel.INFO))
              .childHandler(new LiteMonitoringServerInitializer());
 
-            // Start the server.
+            // 启动服务器
             ChannelFuture f = b.bind(PORT).sync();
 
-            // Wait until the server socket is closed.
+            // 等待socket关闭
             f.channel().closeFuture().sync();
         } finally {
-            // Shut down all event loops to terminate all threads.
+            // 关闭事件循环器终止线程
             bossGroup.shutdownGracefully();
             workerGroup.shutdownGracefully();
         }

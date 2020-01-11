@@ -9,20 +9,24 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 
 /**
- * Server Handler.
+ * LiteMonitoringServer Handler.
  * 
  * @since 1.0.0 2020年1月2日
  * @author <a href="https://waylau.com">Way Lau</a>
  */
 public class LiteMonitoringServerHandler extends SimpleChannelInboundHandler<Object> {
-    private static final Logger logger = LoggerFactory.getLogger(LiteMonitoringServerHandler.class);
+    private static final Logger logger = 
+    		LoggerFactory.getLogger(LiteMonitoringServerHandler.class);
     
 	@Override
 	protected void channelRead0(ChannelHandlerContext ctx, Object obj) throws Exception {
 		
 		if (obj instanceof HostInfo) {
 			HostInfo hostInfo = (HostInfo) obj;
-			logger.info("{} -> Server: {}" , ctx.channel().remoteAddress(), hostInfo);
+			String host = ctx.channel().remoteAddress().toString().replace("/","");
+			hostInfo.setHost(host);
+			
+			logger.info("{} -> Server: {}" , hostInfo.getHost(), hostInfo);
 		}
 	}
 

@@ -1,4 +1,4 @@
-package com.waylau.litemonitoring.client.oshi;
+package com.waylau.litemonitoring.common.util;
 
 
 
@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -46,6 +47,7 @@ import oshi.util.Util;
  * @since 1.0.0 2020年1月5日
  * @author <a href="https://waylau.com">Way Lau</a>
  */
+@Disabled
 public class SystemInfoTest {
 
     private static final Logger logger = LoggerFactory.getLogger(SystemInfoTest.class);

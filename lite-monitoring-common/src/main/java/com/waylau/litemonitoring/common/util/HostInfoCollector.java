@@ -45,9 +45,9 @@ public class HostInfoCollector {
 	    
 		HostInfo hostInfo = new HostInfo();
 		hostInfo.setCreateTime(System.currentTimeMillis());
-		hostInfo.setUsedMemory(usedMemory);
-		hostInfo.setTotalMemory(totalMemory);
-		hostInfo.setUsedCpu(1.0-(idle * 1.0 / totalCpu));
+		hostInfo.setUsedMemory(usedMemory); // 已用内存
+		hostInfo.setTotalMemory(totalMemory); // 总内存
+		hostInfo.setUsedCpu(1.0-(idle * 1.0 / totalCpu)); // CPU使用率
 		
 		return hostInfo;
 	}

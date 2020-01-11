@@ -55,7 +55,7 @@ public class DbUtil {
 	/**
 	 * 从连接池中获取连接
 	 * 
-	 * @return
+	 * @return 连接
 	 */
 	public static Connection getConnection() {
 		try {
@@ -67,6 +67,10 @@ public class DbUtil {
 
 	/**
 	 * 释放资源
+	 * 
+	 * @param resultSet 查询结果
+	 * @param statement 语句
+	 * @param connection 连接
 	 */
 	public static void releaseResources(ResultSet resultSet,
 			Statement statement, Connection connection) {

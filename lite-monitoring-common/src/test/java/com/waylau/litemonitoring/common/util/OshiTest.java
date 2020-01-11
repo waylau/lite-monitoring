@@ -1,8 +1,10 @@
-package com.waylau.litemonitoring.client.oshi;
+package com.waylau.litemonitoring.common.util;
 
 import java.text.DecimalFormat;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
+
+import org.junit.jupiter.api.Disabled;
 
 import oshi.SystemInfo;
 import oshi.hardware.CentralProcessor;
@@ -14,6 +16,7 @@ import oshi.hardware.GlobalMemory;
  * @since 1.0.0 2020年1月5日
  * @author <a href="https://waylau.com">Way Lau</a>
  */
+@Disabled
 public class OshiTest {
 
     public static void main(String[] args) {
@@ -85,15 +88,15 @@ public class OshiTest {
         System.out.println("----------------jvm信息----------------");
         Properties props = System.getProperties();
         Runtime runtime = Runtime.getRuntime();
-        //jvm总内存
+        // JVM总内存
         long jvmTotalMemoryByte = runtime.totalMemory();
-        //jvm最大可申请
+        // JVM最大可申请
         long jvmMaxMoryByte = runtime.maxMemory();
-        //空闲空间
+        // 空闲空间
         long freeMemoryByte = runtime.freeMemory();
-        //jdk版本
+        // JDK版本
         String jdkVersion = props.getProperty("java.version");
-        //jdk路径
+        // JDK路径
         String jdkHome = props.getProperty("java.home");
         System.out.println("jvm内存总量 = " + formatByte(jvmTotalMemoryByte));
         System.out.println("jvm已使用内存 = " + formatByte(jvmTotalMemoryByte-freeMemoryByte));

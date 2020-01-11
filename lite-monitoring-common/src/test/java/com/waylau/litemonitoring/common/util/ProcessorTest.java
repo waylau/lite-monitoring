@@ -1,7 +1,9 @@
-package com.waylau.litemonitoring.client.oshi;
+package com.waylau.litemonitoring.common.util;
 
 import java.text.DecimalFormat;
 import java.util.concurrent.TimeUnit;
+
+import org.junit.jupiter.api.Disabled;
 
 import oshi.SystemInfo;
 import oshi.hardware.CentralProcessor;
@@ -13,6 +15,7 @@ import oshi.hardware.HardwareAbstractionLayer;
  * @since 1.0.0 2020年1月5日
  * @author <a href="https://waylau.com">Way Lau</a>
  */
+@Disabled
 public class ProcessorTest {
 
     public static void main(String[] args) throws InterruptedException {

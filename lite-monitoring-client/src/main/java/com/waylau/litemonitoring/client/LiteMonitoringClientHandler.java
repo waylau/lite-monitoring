@@ -16,14 +16,15 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 
 /**
- * SerializationClient Handler.
+ * LiteMonitoringClient Handler.
  * 
  * @since 1.0.0 2020年1月2日
  * @author <a href="https://waylau.com">Way Lau</a>
  */
 public class LiteMonitoringClientHandler extends
 		SimpleChannelInboundHandler<Object> {
-    private static final Logger logger = LoggerFactory.getLogger(LiteMonitoringClientHandler.class);
+    private static final Logger logger = 
+    		LoggerFactory.getLogger(LiteMonitoringClientHandler.class);
     
 	@Override
 	protected void channelRead0(ChannelHandlerContext ctx, Object obj)
@@ -44,12 +45,12 @@ public class LiteMonitoringClientHandler extends
 						try {
 							hostInfo = HostInfoCollector.getHostInfo();
 						} catch (InterruptedException e) {
-							logger.debug("error: {}", e);
+							logger.error("error: {}", e);
 						}
 	    				ch.write(hostInfo);
 	    				ch.flush();
 	    				
-	    				logger.info("调度一次任务"); 
+	    				logger.info("调度一次任务，数据：{}", hostInfo); 
     	            }
     	        }, 5, 5, TimeUnit.SECONDS);
     }

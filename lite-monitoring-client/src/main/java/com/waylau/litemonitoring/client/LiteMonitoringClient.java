@@ -1,5 +1,8 @@
 package com.waylau.litemonitoring.client;
 
+import com.waylau.litemonitoring.common.util.CommandLineArgs;
+import com.waylau.litemonitoring.common.util.CommandLineArgsParser;
+
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;
 import io.netty.channel.EventLoopGroup;
@@ -15,9 +18,26 @@ import io.netty.channel.socket.nio.NioSocketChannel;
  */
 public class LiteMonitoringClient {
 
-    public static void main(String[] args) throws Exception{
-        new LiteMonitoringClient("localhost", 8082).run();
-    }
+	private static final String CMD_PORT = "port";
+	private static final String CMD_SERVER = "server";
+	private static final int DEFUALT_PORT = 8082;
+	private static final String DEFUALT_SERVER = "localhost";
+	
+	public static void main(String[] args) throws Exception {
+		CommandLineArgs commandLineArgs = CommandLineArgsParser.parse(args);
+		Integer port = commandLineArgs.getIntArg(CMD_PORT);
+		String server = commandLineArgs.getArg(CMD_SERVER);
+
+		if (port == null) {
+			port = DEFUALT_PORT;
+		}
+
+		if (server == null) {
+			server = DEFUALT_SERVER;
+		}
+
+		new LiteMonitoringClient(server, port).run();
+	}
 
     private final String host;
     private final int port;
