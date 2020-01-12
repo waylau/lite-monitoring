@@ -29,3 +29,43 @@ Windows • Linux • Mac OS X • Unix (Solaris, FreeBSD)
 * Sensors (temperature, fan speeds, voltage)
 * HTTP/HTTPS web UI support
 * Lightweight and fast UI
+
+
+## How to 
+
+Build all applications:
+
+```
+mvn clean package
+```
+
+
+Run lite-monitoring-server application:
+
+```
+java -jar target/lite-monitoring-server-1.0.0.jar 
+```
+
+
+Run lite-monitoring-client application with lite-monitoring-server's url and port:
+
+```
+java -jar target/lite-monitoring-client-1.0.0.jar --server=127.0.0.1 --port=8082
+``` 
+
+
+
+Multi-instance deployment with lite-monitoring-web
+
+```
+java -jar target/lite-monitoring-web-1.0.0.jar --port=8080
+
+java -jar target/lite-monitoring-web-1.0.0.jar --port=8081
+
+java -jar target/lite-monitoring-web-1.0.0.jar --port=8082
+```
+
+
+## UI
+
+See [lite-monitoring-ui](https://github.com/waylau/lite-monitoring-ui).
